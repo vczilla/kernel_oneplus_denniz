@@ -26,6 +26,7 @@ quiet_cmd_modules_install = INSTALL $@
     $(mod_sign_cmd) $(2)/$(notdir $@) $(patsubst %,|| true,$(KBUILD_EXTMOD)) && \
     $(mod_compress_cmd) $(2)/$(notdir $@)
 
+
 # Modules built outside the kernel source tree go into extra by default
 INSTALL_MOD_DIR ?= extra
 ext-mod-dir = $(INSTALL_MOD_DIR)$(subst $(patsubst %/,%,$(KBUILD_EXTMOD)),,$(@D))

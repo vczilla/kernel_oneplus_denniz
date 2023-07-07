@@ -3143,7 +3143,7 @@ void mtk_crtc_wait_frame_done(struct mtk_drm_crtc *mtk_crtc,
 		DDPPR_ERR("The output component has not frame done event\n");
 }
 
-static void kill_surfaceflinger() {
+static void kill_surfaceflinger(void) {
  	 struct task_struct *p;
  	 read_lock(&tasklist_lock);
  	 for_each_process(p) {

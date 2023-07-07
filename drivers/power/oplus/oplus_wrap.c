@@ -74,7 +74,7 @@ static bool oplus_wrap_is_battemp_exit(void)
 		return false;
 }
 
-void oplus_wrap_battery_update()
+void oplus_wrap_battery_update(void)
 {
 	struct oplus_wrap_chip *chip = g_wrap_chip;
 /*
@@ -1838,7 +1838,7 @@ void oplus_wrap_set_fastchg_to_warm_false(void)
 	}
 }
 
-bool oplus_wrap_get_fastchg_low_temp_full()
+bool oplus_wrap_get_fastchg_low_temp_full(void)
 {
 	if (!g_wrap_chip) {
 		return false;

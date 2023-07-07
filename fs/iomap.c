@@ -934,7 +934,7 @@ iomap_dio_actor(struct inode *inode, loff_t pos, loff_t length,
 			bio_set_op_attrs(bio, REQ_OP_WRITE, REQ_SYNC | REQ_IDLE);
 			task_io_account_write(bio->bi_iter.bi_size);
 #if defined(OPLUS_FEATURE_IOMONITOR) && defined(CONFIG_IOMONITOR)
-			iomonitor_update_rw_stats(DIO_WRITE, NULL, n);
+			iomonitor_update_rw_stats(DIO_WRITE, NULL, ret);
 #endif /*OPLUS_FEATURE_IOMONITOR*/
 		} else {
 			bio_set_op_attrs(bio, REQ_OP_READ, 0);

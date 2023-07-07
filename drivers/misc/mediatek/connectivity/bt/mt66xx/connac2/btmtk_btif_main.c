@@ -318,7 +318,7 @@ void btmtk_cif_dump_btif_tx_no_rsp(void)
 	}
 }
 
-/* btmtk_cif_fw_own_clr()
+/* btmtk_cif_fw_own_clr(void)
  *
  *    Ask FW to wakeup from sleep state, driver should invoke this function
  *    before communitcate with FW/HW
@@ -373,7 +373,7 @@ static int32_t btmtk_cif_fw_own_clr(void)
 	return 0;
 }
 
-/* btmtk_cif_fw_own_set()
+/* btmtk_cif_fw_own_set(void)
  *
  *    Ask FW to sleep for power saving
  *
@@ -539,7 +539,7 @@ int bt_chip_reset_flow(enum bt_reset_level rst_level,
 *                   C A L L   B A C K   F U N C T I O N S
 ********************************************************************************
 */
-/* bt_pre_chip_rst_handler()
+/* bt_pre_chip_rst_handler(void)
  *
  *    Pre-action of chip reset (before HW power off), driver should ask
  *    conninfra to do coredump and then turn off bt driver
@@ -560,7 +560,7 @@ static int bt_pre_chip_rst_handler(enum consys_drv_type drv, char *reason)
 		return bt_chip_reset_flow(RESET_LEVEL_0, drv, reason);
 }
 
-/* bt_post_chip_rst_handler()
+/* bt_post_chip_rst_handler(void)
  *
  *    Post-action of chip reset (after HW power on), turn on BT
  *
@@ -577,7 +577,7 @@ static int bt_post_chip_rst_handler(void)
 	return 0;
 }
 
-/* bt_do_pre_power_on()
+/* bt_do_pre_power_on(void)
  *
  * Only set the flag to pre-calibration mode here
  *
@@ -593,7 +593,7 @@ static int bt_do_pre_power_on(void)
 	return btmtk_set_power_on(g_bdev->hdev, TRUE);
 }
 
-/* bt_do_calibration()
+/* bt_do_calibration(void)
  *
  *    calibration flow is control by conninfra driver, driver should implement
  *    the function of calibration callback, here what driver do is send cmd to
@@ -825,7 +825,7 @@ int32_t btmtk_btif_open(void)
 	return 0;
 }
 
-/* btmtk_btif_close()
+/* btmtk_btif_close(void)
  *
  *    Close btif
  *
@@ -835,7 +835,7 @@ int32_t btmtk_btif_open(void)
  * Return Value:
  *     0 if success, otherwise error code
  */
-int32_t btmtk_btif_close()
+int32_t btmtk_btif_close(void)
 {
 	int32_t ret = 0;
 

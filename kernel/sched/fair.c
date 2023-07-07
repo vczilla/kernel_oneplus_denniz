@@ -6116,7 +6116,7 @@ static inline unsigned long cpu_util_rt(int cpu)
 }
 
 #if defined(OPLUS_FEATURE_SCHED_ASSIST) && (CONFIG_SCHED_WALT)
-extern oplus_get_cpu_util_mtk(int cpu ,u64 *walt_cpu_util, int *boosted);
+extern void oplus_get_cpu_util_mtk(int cpu ,u64 *walt_cpu_util, int *boosted);
 #endif
 static inline unsigned long cpu_util_freq(int cpu)
 {

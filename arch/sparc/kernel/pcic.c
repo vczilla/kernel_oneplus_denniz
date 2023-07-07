@@ -742,7 +742,7 @@ void __init pci_time_init(void)
 
 
 #if 0
-static void watchdog_reset() {
+static void watchdog_reset(void) {
 	writeb(0, pcic->pcic_regs+PCI_SYS_STATUS);
 }
 #endif

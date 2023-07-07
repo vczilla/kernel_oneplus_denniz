@@ -77,7 +77,7 @@ static int get_status(void)
 #endif
 }
 
-static bool get_log_swich()
+static bool get_log_swich(void)
 {
     return  (BLACK_STATUS_CHECK_ENABLE == get_status()||BLACK_STATUS_CHECK_DEBUG == get_status())&& g_black_data.get_log;
 }
@@ -97,7 +97,7 @@ static void get_blackscreen_check_dcs_logmap(char* logmap)
 }
 
 //if the error id contain current pid, we think is a normal resume
-static bool is_normal_resume()
+static bool is_normal_resume(void)
 {
     if (is_valid_systemserver_pid(get_systemserver_pid())) {
         char current_pid_str[32];
